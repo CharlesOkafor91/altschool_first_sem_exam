@@ -8,6 +8,8 @@ methods,and handling time-related functionalities.
 """
 from datetime import datetime
 
+# Creating an Expense class
+
 class Expense():
     '''
     Represents an individual financial expense.
@@ -21,9 +23,15 @@ class Expense():
         self.created_at = created_at
         self.updated_at = None
 
-    def update(self, new_title, new_amount):
-        self.title = new_title
-        self.amount = new_amount
+    def update(self, new_title=None, new_amount=None):
+        # updating title if provideed
+        if new_title is not None:
+            self.title = new_title
+        
+        # updating amount if provided
+        if new_amount is not None:
+            self.amount = new_amount
+        
         self.updated_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 
